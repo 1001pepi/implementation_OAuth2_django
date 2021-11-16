@@ -1,0 +1,18 @@
+{% extends "clouddisk/home_base.html" %}
+
+{% block content %}
+<div class="container overflow-auto" style="height: 85vh;">
+  <div class="row">
+    {% for p in images %}
+      <div class="card col-2 custom_card">
+        <img class="card-img-top custom_body" style="width: 150px; height: 150px;" src="{{ p.image }}" alt="image">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{p.name}}</b></h5>
+        </div>
+      </div>
+    {% endfor %}
+  
+  </div>
+</div>
+
+{% endblock %}

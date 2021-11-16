@@ -1,0 +1,45 @@
+{% extends "clouddisk/base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h1 align="center" style="font-weight: bold;"><span style="color: blue">Cloud</span><span>disk</span></h1>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div align="center">
+      <p>
+        {% load static %} <img src="{%static "clouddisk/img/cloud_disk.jpeg" %}" alt="cloud disk"/>
+      </p>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <h1 align="center" style="font-weight: bold;">Sign up</h1>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div align="center">
+
+      <form method="post">
+        {% csrf_token %}
+      
+        {{ form.as_p }}
+      
+        <button type="submit">Sign Up</button>
+      
+      </form>
+    </div>
+    
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <p align="center">
+      <br></br>
+      <a href="/clouddisk/signin">Already have an account? Login</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

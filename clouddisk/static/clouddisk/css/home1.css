@@ -1,0 +1,16 @@
+.logo{
+    width: 80px;
+}
+
+.header{
+    background-color: lightblue;
+}
+
+.custom_body{
+    margin-top: 10px;
+}
+
+.custom_card{
+    margin-right: 20px;
+    margin-top: 10px;
+}
