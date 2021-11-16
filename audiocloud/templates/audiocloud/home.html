@@ -1,0 +1,30 @@
+{% extends "audiocloud/home_base.html" %}
+
+{% block content %}
+<div class="container overflow-auto" style="height: 85vh;">
+  <div class="row">
+    <table style="margin-top: 10px;" align="center">
+      {% for p in songs %}
+        <tr>
+          <td>
+            <div style="margin-right: 20px; font-weight: bold; color: rgb(255, 0, 119);">{{p.name }}</div> 
+          </td>
+          <td>
+            <div style="margin-right: 20px;">
+              <audio controls src="{{ p.song }}"> Your browser does not support the
+                <code>audio</code> element.
+              </audio>
+            </div>
+          </td>
+          <td>
+            <button class="btn btn-primary" onclick="if (confirm('Voulez-vous supprimer l\'image {{p.name}} ?')) window.location.href='/audiocloud/delete_song/'+ '{{ p.id }}' ">Delete</button>
+          </td>
+        </tr>
+    {% endfor %}
+    </table>
+    
+  
+  </div>
+</div>
+
+{% endblock %}
