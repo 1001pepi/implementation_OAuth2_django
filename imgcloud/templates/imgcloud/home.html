@@ -1,0 +1,19 @@
+{% extends "imgcloud/home_base.html" %}
+
+{% block content %}
+<div class="container overflow-auto" style="height: 85vh;">
+  <div class="row">
+    {% for p in images %}
+      <div class="card col-2 custom_card">
+        <img class="card-img-top custom_body" style="width: 150px; height: 150px;" src="{{ p.image }}" alt="image">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{p.name}}</b></h5>
+        </div>
+        <button class="btn btn-primary" onclick="if (confirm('Voulez-vous supprimer l\'image {{p.name}} ?')) window.location.href='/imgcloud/delete_image/'+ '{{ p.id }}' ">Delete</button>
+      </div>
+    {% endfor %}
+  
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "imgcloud/base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h1 align="center" style="font-weight: bold;"><span style="color: blue">Img</span><span>cloud</span></h1>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div align="center">
+      <p>
+        {% load static %} <img src="{%static "imgcloud/img/imgcloud.jpeg" %}" alt="imgcloud"/>
+      </p>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <h1 align="center" style="font-weight: bold;">Sign in</h1>
+  </div>
+
+  <div>
+    {%if message%}
+      <p align="center" style="color: red; font-weight: bold;">*{{message}}</p>
+    {%endif%}
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div align="center">
+
+      <form method="post">
+        {% csrf_token %}
+      
+        {{ form.as_p }}
+      
+        <button type="submit">Sign In</button>
+      
+      </form>
+    </div>
+    
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <p align="center">
+      <br></br>
+      <a href="/imgcloud/signup">Don't have an account? Signup</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
